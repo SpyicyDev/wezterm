@@ -24,14 +24,14 @@ config.window_padding = {
     bottom = 0,
 }
 
-config.default_prog = { "/opt/homebrew/bin/tmux", "new-session", "-A", "-s", "main" }
+config.default_prog = { "/usr/bin/tmux", "new-session", "-A", "-s", "main" }
 
 config.scrollback_lines = 0
 
 config.keys = {
     {
         key = "t",
-        mods = "CMD",
+        mods = "ALT",
         action = wezterm.action.Multiple {
             wezterm.action.SendKey { key = "s", mods = "CTRL" },
             wezterm.action.SendKey { key = "c" }
@@ -40,7 +40,7 @@ config.keys = {
 
     {
         key = "T",
-        mods = "CMD",
+        mods = "ALT",
         action = wezterm.action.Multiple {
             wezterm.action.SendKey { key = "s", mods = "CTRL" },
             wezterm.action.SendKey { key = "c", mods = "CTRL" },
@@ -50,7 +50,7 @@ config.keys = {
 
     {
         key = "w",
-        mods = "CMD",
+        mods = "ALT",
         action = wezterm.action.Multiple {
             wezterm.action.SendKey { key = "s", mods = "CTRL" },
             wezterm.action.SendKey { key = "x" },
@@ -59,7 +59,7 @@ config.keys = {
 
     {
         key = "W",
-        mods = "CMD",
+        mods = "ALT",
         action = wezterm.action.Multiple {
             wezterm.action.SendKey { key = "s", mods = "CTRL" },
             wezterm.action.SendKey { key = "l", mods = "CTRL" },
@@ -71,7 +71,7 @@ config.keys = {
 for i = 1, 9 do
     table.insert(config.keys, {
         key = tostring(i),
-        mods = "CMD",
+        mods = "ALT",
         action = wezterm.action.Multiple {
             wezterm.action.SendKey { key = "s", mods = "CTRL" },
             wezterm.action.SendKey { key = tostring(i) }
