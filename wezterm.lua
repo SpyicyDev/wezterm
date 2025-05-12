@@ -15,16 +15,21 @@ config.font = wezterm.font_with_fallback({
     "JetBrains Mono",
     "MesloLGS NF",
 })
-config.font_size = 15.5
+config.font_size = 14.5
 
 config.window_padding = {
     left = 0,
     right = 0,
-    top = 80,
+    top = 0, -- was 80
     bottom = 0,
 }
 
 config.default_prog = { "/opt/homebrew/bin/tmux", "new-session", "-A", "-s", "main" }
+
+config.native_macos_fullscreen_mode = false
+config.macos_fullscreen_extend_behind_notch = true
+
+config.window_close_confirmation = 'NeverPrompt'
 
 config.scrollback_lines = 0
 
