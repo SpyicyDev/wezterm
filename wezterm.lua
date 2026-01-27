@@ -1,10 +1,20 @@
 local wezterm = require 'wezterm'
+local mux = wezterm.mux
 
 local config = {}
 
 if wezterm.config_builder then
     config = wezterm.config_builder()
 end
+
+wezterm.on('gui-startup', function(cmd)
+    local tab, pane, window = mux.spawn_window(cmd or {})
+    local gui_window = window:gui_window()
+    local dims = gui_window:get_dimensions()
+    if not dims.is_full_screen then
+        gui_window:toggle_fullscreen()
+    end
+end)
 
 config.color_scheme = "catppuccin-mocha"
 
@@ -15,7 +25,7 @@ config.font = wezterm.font_with_fallback({
     "JetBrains Mono",
     "MesloLGS NF",
 })
-config.font_size = 14.5
+config.font_size = 13
 
 config.window_padding = {
     left = 0,
